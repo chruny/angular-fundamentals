@@ -1,0 +1,13 @@
+li > a.active{
+    color: red !important;
+}
+
+.navbar .container-fluid{
+    display:flex;
+    flex-direction: row;
+}
+
+.navbar-nav li{
+    display: flex;
+    flex-direction: row;
+}

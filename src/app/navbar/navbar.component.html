@@ -1,0 +1,41 @@
+<div class='bg-warning navbar navbar-default'>
+  <div class="container-fluid">
+    <div class='navbar-header'>
+      <a class='navbar-brand' href='#'>ngEvents</a>
+    </div>
+    <div class='container'>
+      <ul class='nav navbar-nav'>
+        <li class='active'>
+          <a [routerLink]="['/events']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">All
+            Events</a>
+        </li>
+        <li>
+          <a [routerLink]="['/events','new']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Create
+            Event</a>
+        </li>
+        <li class='dropdown'>
+          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+            Events
+            <span class='caret'></span>
+          </a>
+          <ul class='dropdown-menu'>
+            <li><a href='#'>Running</a></li>
+            <li><a href='#'>Jumping</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class='navbar-header navbar-right'>
+        <ul>
+          <li *ngIf="!authService.isAuthentificated()"><a  [routerLink]="['user/login']">Login</a></li>
+          <li *ngIf="authService.isAuthentificated()"><a [routerLink]="['user/profile']">Welcome {{authService.currentUser.userName}}</a></li>
+        </ul>
+      </div>
+      <form id='searchForm' (ngSubmit)="searchSession(searchTerm)">
+        <div class='form-group'>
+          <input  type='text' class='form-control' placeholder='Search Sessions'>
+        </div>
+        <button class='btn btn-default'>Search</button>
+      </form>
+    </div>
+  </div>
+</div >

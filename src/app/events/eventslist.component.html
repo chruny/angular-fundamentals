@@ -1,0 +1,12 @@
+<div>
+  <h1>Upcoming Angular Events</h1>
+  <hr />
+  <div class='row'>
+    <app-eventthumbnail [routerLink]="['/events',event.id]" class='col-md-5' *ngFor="let event of events" 
+      [event]="event"
+      (click)="handleThumbnailClick(event.name)"
+      >
+    </app-eventthumbnail>
+  </div>
+
+</div>
